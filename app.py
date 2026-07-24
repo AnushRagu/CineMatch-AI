@@ -31,7 +31,7 @@ def recommend(movie):
 
 import requests
 
-api_key = st.secrets["461356b6f4aae5ca2a2b42b81a48c506"]
+api_key = st.secrets["TMDB_API_KEY"]
 @st.cache_data
 def fetch_poster(movie_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=en-US"
