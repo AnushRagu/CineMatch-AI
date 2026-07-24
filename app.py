@@ -30,9 +30,11 @@ def recommend(movie):
     return (recommended_movies)
 
 import requests
+
+api_key = st.secrets["461356b6f4aae5ca2a2b42b81a48c506"]
 @st.cache_data
 def fetch_poster(movie_id):
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=461356b6f4aae5ca2a2b42b81a48c506"
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=en-US"
 
     response = requests.get(url)
 
